@@ -3,18 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Process;
 
 class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Project $project)
     {
         $projects = Project::all();
-        return view('admin.projects.index', compact('projects'));
+        return view('admin.projects.index', compact('projects', 'project'));
     }
 
     /**
@@ -28,14 +30,20 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) {}
+    public function store(StoreProjectRequest $request)
+    {
+
+        $data  = $request->validated();
+        $project  = Project::created($data);
+        return redirect()->route("admin.projects.index");
+    }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+        return view('admin.projects.show', compact("project"));
     }
 
     /**
