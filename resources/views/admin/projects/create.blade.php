@@ -1,1 +1,1 @@
-@extends('layouts.create-edit-page')
+@extends('layouts.create-or-edit-page')
