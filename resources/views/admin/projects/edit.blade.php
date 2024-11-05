@@ -1,9 +1,9 @@
 @extends('layouts.create-or-edit-page')
 
 @section('form-action')
-    {{ route('admin.projects.store', $project) }}
+    {{ route('admin.projects.update', $project) }}
 @endsection
 
 @section('form-method')
-    @method('POST')
+    @method('PUT')
 @endsection

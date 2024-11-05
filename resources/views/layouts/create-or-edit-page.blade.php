@@ -6,9 +6,9 @@
 
         <div class="row">
             <div class="col-8">
-                <form action="" method="POST" class="text-light">
+                <form action="@yield('form-action')" method="POST" class="text-light">
                     @csrf
-                    @method('POST')
+                    @yield('form-method')
 
                     <div class="mb-4">
                         <label for="title" class="form-label">Title</label>
