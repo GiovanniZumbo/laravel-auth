@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container text-light">
-        <h1 class="text-center my-3">New post added</h1>
+        <h1 class="text-center my-3">{{ $project->title }}</h1>
 
         <div class="row">
             <div class="col">
