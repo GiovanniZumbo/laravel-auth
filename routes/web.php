@@ -24,4 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function () {
     Route::get("/index", [AdminProjectController::class, 'index'])->name('projects.index');
+    Route::get("/create", [AdminProjectController::class, 'create'])->name('projects.create');
 });
