@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-light">Create a new post</h1>
+        <h1 class="text-light">@yield('page-title')</h1>
 
         <div class="row">
             <div class="col-8">
